@@ -30,14 +30,14 @@
 
 // EXECUTION
 
-function b() {
-    console.log('Called b!');
-}
+//function b() {
+//    console.log('Called b!');
+//}
 
-b(); // Outputs 'Called b!'
+//b(); // Outputs 'Called b!'
 
-console.log(a); // Outputs Undefined, because of the execution context.
+//console.log(a); // Outputs Undefined, because of the execution context.
 
-var a = "Hello World!";
+//var a = "Hello World!";
 
-console.log(a); // Outputs "Hello World!"
+//console.log(a); // Outputs "Hello World!"
