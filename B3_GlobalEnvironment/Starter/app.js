@@ -41,3 +41,14 @@
 //var a = "Hello World!";
 
 //console.log(a); // Outputs "Hello World!"
+
+
+function b() {
+
+}
+
+function a() {
+    b();
+}
+
+a();
