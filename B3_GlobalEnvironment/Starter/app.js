@@ -42,13 +42,18 @@
 
 //console.log(a); // Outputs "Hello World!"
 
-
+// VARIABLE ENVIRONMENT
 function b() {
-
+    var myVar;
+   console.log(myVar); // Undefined, because myVar is inside b's execution context.
 }
 
 function a() {
+    var myVar = 2;
+   console.log(myVar); // 2, because myVar is inside a's execution context.
     b();
 }
-
-a();
+ var myVar = 1;
+console.log(myVar); // 1 because myVar is in the global execution context.
+ a();    // What is the value of var?
+        //
