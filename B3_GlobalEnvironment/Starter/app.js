@@ -43,6 +43,7 @@
 //console.log(a); // Outputs "Hello World!"
 
 // VARIABLE ENVIRONMENT
+
 //function b() {
 //    var myVar;
 //   console.log(myVar); // Undefined, because myVar is inside b's execution context.
@@ -58,6 +59,7 @@
 //a();    // What is the value of var?
 
 // SCOPE CHAIN
+
 //function b() {
 //   console.log(myVar); // What value will be logged?. Without a value declared the function will reference its outer environment.
 //}
