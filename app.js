@@ -98,3 +98,9 @@ document.addEventListener('click', clickHandler);
 // until waitThreeSeconds and console.log() have left the stack.
 waitThreeSeconds();
 console.log('finished execution');
+
+// Dynamic typing
+// var isNew = 'Hello';  //Will give us no error.
+
+// Static typing
+// boll isNew = 'Hello';  //Will trow an error, becuase the value is not true or false.
