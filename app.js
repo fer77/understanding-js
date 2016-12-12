@@ -128,5 +128,25 @@
 //* Postfix notation: 3, 4+
 //* Infix notation: 3 + 4
 
-var a = 3 + 4;  //* This is essentially a function call that takes two values and adds them together.
-console.log(a);  //* This will output 7. The JS engine knows this is seven, because the + sign is an operator.
+//var a = 3 + 4;  //* This is essentially a function call that takes two values and adds them together.
+//console.log(a);  //* This will output 7. The JS engine knows this is seven, because the + sign is an operator.
+
+// OPERATOR PRECEDENCE AND ASSOCIATIVITY
+
+var a = 2,
+    b = 3,
+    c = 4;
+
+a = b = c;
+
+// All three will log 4, because of associativity.  The = operator has an associativity of 'right-to-left' (see operator associativity).
+console.log(a);
+console.log(b);
+console.log(c);
+
+var a = 3 + 4 * 5; //* Logs 23, because associativity places * higher in precedence than +
+
+var a = (3 + 4) * 5; //* Logs 35, because associativity places () higher in precedence than any other operator.
+
+console.log(a); 
+
