@@ -133,20 +133,30 @@
 
 // OPERATOR PRECEDENCE AND ASSOCIATIVITY
 
-var a = 2,
-    b = 3,
-    c = 4;
+//var a = 2,
+//    b = 3,
+//    c = 4;
 
-a = b = c;
+//a = b = c;
 
-// All three will log 4, because of associativity.  The = operator has an associativity of 'right-to-left' (see operator associativity).
-console.log(a);
-console.log(b);
-console.log(c);
+//* All three will log 4, because of associativity.  The = operator has an associativity of 'right-to-left' (see operator associativity).
+//console.log(a);
+//console.log(b);
+//console.log(c);
 
-var a = 3 + 4 * 5; //* Logs 23, because associativity places * higher in precedence than +
+//var a = 3 + 4 * 5; //* Logs 23, because associativity places * higher in precedence than +
 
-var a = (3 + 4) * 5; //* Logs 35, because associativity places () higher in precedence than any other operator.
+//var a = (3 + 4) * 5; //* Logs 35, because associativity places () higher in precedence than any other operator.
 
-console.log(a); 
+//console.log(a); 
 
+// COERCION
+
+var a = 1 + 2;
+console.log(a); //* Logs 3 bacause 1 + 2 = 3
+
+var b = 'Hello ' + 'World!';
+console.log(b); //* Logs "Hello World!", it concatenates the strings together.
+
+var c = 1 + '2';
+console.log(c); //* Logs 12.  JS coerces the number 1 into a string '1'.  To the JS engine the nimber 1 and the string '1' are nothing alike.
