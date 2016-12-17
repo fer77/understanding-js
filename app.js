@@ -262,27 +262,54 @@
 // console.log(libraryName);  //* 'lib2' will be logged, becuase libraryName was attached to the window object first as 'lib1', but
                             //* overwritten by lib2.js libraryName declaration.
 // OBJECTS
-var person = new Object();
+//var person = new Object();
 
-person['firstName'] = 'Fernando';
-person['lastName'] = 'Fernandez';
+//person['firstName'] = 'Fernando';
+//person['lastName'] = 'Fernandez';
 
-var firstNameProperty = 'firstName';
+//var firstNameProperty = 'firstName';
 
-console.log(person);
+//console.log(person);
 
-console.log(person[firstNameProperty]);
+//console.log(person[firstNameProperty]);
 
-console.log(person.firstName);
-console.log(person.lastName);
+//console.log(person.firstName);
+//console.log(person.lastName);
 
-person.address = new Object();
-person.address.street = '777 State st.';
-person.address.city = 'Springville';
-person.address.state = 'UT';
+//person.address = new Object();
+//person.address.street = '777 State st.';
+//person.address.city = 'Springville';
+//person.address.state = 'UT';
 
-console.log(person.address.street);
-console.log(person.address.city);
-console.log(person['address']['state']);
+//console.log(person.address.street);
+//console.log(person.address.city);
+//console.log(person['address']['state']);
 
+//OBJECT LITTERALS
 
+var fernando = {
+    firstName: 'Fernando',
+    lastName: 'Fernandez',
+    address: {
+        street: '777 State st.',
+        city: 'Springville',
+        state: 'UT'
+    }
+};
+console.log(fernando);
+
+function greet(person) {
+        console.log('Hello ' + person.firstName);
+}
+
+greet(fernando);
+
+//* Object literal: Is using {} to define name and value pairs, separated by colons.
+greet({
+    firstName: 'Katy',
+    lastName: 'Fernandez'
+});
+
+fernando.address2 = {
+    company: 'Workity work work'
+}
