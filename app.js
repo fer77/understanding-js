@@ -249,10 +249,15 @@
 //* returns true
 
 //* Setting a default value:
-function greet(name) {
-    name = name || '<your name here>'; //* Order of operation will run || first and then the = sign. If name is true it will return true otherwise it'll return the default.
-    console.log('Hello ' + name);
-}
+//function greet(name) {
+//    name = name || '<your name here>'; //* Order of operation will run || first and then the = sign. If name is true it will return true otherwise it'll return the default.
+//    console.log('Hello ' + name);
+//}
 
-greet('Fernando');
-greet();
+//greet('Fernando');
+//greet();
+
+//FRAMEWORKS: DEFAULT VALUES
+
+console.log(libraryName);  //* 'lib2' will be logged, becuase libraryName was attached to the window object first as 'lib1', but
+                            //* overwritten by lib2.js libraryName declaration.

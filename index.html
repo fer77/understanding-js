@@ -3,7 +3,11 @@
         
     </head>
     <body>
-
+        <!-- These three script tags are not creating new execution context, 
+            they do not even separate the code in anyway. They are, however,
+            stacking the code on top of ea. other. -->
+        <script src="lib1.js"></script>
+        <script src="lib2.js"></script>
         <script src="app.js"></script>
     </body>
 </html>
