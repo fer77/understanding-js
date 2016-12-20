@@ -198,7 +198,7 @@
 //if (a === b) {
 //        console.log('They are equal!');
 //} else {
-//        console.log('Nope, not equal.');<`3`>
+//        console.log('Nope, not equal.');
 //}
 
 //EXISTENCE AND BOOLEANS
@@ -348,10 +348,10 @@
 
 //JSON
 
-var objectLiteral = {
-    firstName: 'Katy',
-    lastName: 'Fernandez'
-}
+//var objectLiteral = {
+//    firstName: 'Katy',
+//    lastName: 'Fernandez'
+//}
 
 //console.log(objectLiteral);
 
@@ -362,8 +362,24 @@ var objectLiteral = {
 //}
 
 //* json is not part of JS, but becuase it is so easy for JS to understand any object can be transformed it to JSON:
-console.log(JSON.stringify(objectLiteral));
+//console.log(JSON.stringify(objectLiteral));
 
 //* And for any JSON we can convert it to an object:
-var jsonValue = JSON.parse('{ "firstName": "Katy","children": true }');
-console.log(jsonValue);
+//var jsonValue = JSON.parse('{ "firstName": "Katy","children": true }');
+//console.log(jsonValue);
+
+//FUNCTIONS ARE OBJECTS
+
+function greet() {
+        console.log('hi');
+}
+
+//* We can add a property to a function:
+greet.language = 'english';
+console.log(greet); //* Will return the whole function:
+                    //   function dgreet() {
+                    //       console.log('hi');
+                    //}
+//* But if we can log the new property we created:
+console.log(greet.language); //* Returns 'english'.
+
