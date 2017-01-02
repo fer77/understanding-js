@@ -1,24 +1,30 @@
-//* ARRAYS
+function greet(firstName, lastName, initials) {
+    //* Default values can be set like this:
+    initials = initials || 'XX';
 
-//var arr = new Array();
+    //* When no parameters are passed we can have the function do something like this:
+    if (arguments.length === 0) {
+        console.log('Missing parameters');
+        console.log('---------');
+        return;
+    }
 
-//* Array literal:
-//* An array can be a collection of anything.
-var arr = [
-    1,
-    false,
-    {
-        name: 'Fernando',
-        address: '111 one St.'
-    },
-    function(someName) {
-        var greeting = 'Hello ';
-        console.log(greeting + someName);
-    },
-    'hello'
-];
+    console.log(firstName);
+    console.log(lastName);
+    console.log(initials);
+    //* JS' execution context sets up a special keyword that holds all the values passed as arguments in an array-like:
+    console.log(arguments);
+    //* We can access the array-like the same as any other array:
+    console.log('arg 0: ' + arguments[0] + ',',
+                'arg 1: ' + arguments[1] + ',',
+                'arg 2: ' + arguments[2]);
+    console.log('---------');
+}
 
-console.log(arr);
+greet();
+//* Invoking greet without any arguments returns 'undefined', because hoisting gives arguments the value of 'undefined' during the creation phase.
 
-//* JS' dynamic typing allow for arrays to be referenced and hold functions that can then be invoked:
-arr[3](arr[2].name);
+greet('Fernando');
+greet('Fernando', 'Fernandez');
+greet('Fernando', 'Fernandez', 'FF');
+
