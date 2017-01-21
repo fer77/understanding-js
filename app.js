@@ -1,50 +1,25 @@
-//* Global execution context contains:
-//* buildFunctions() & fs
-function buildFunctions() {
-	//* This function's execution context contains:
-	//* i = 3 & arr = [f0, f1, f2]
-	//* i is 3 by the time the functions iside arr are called.
-	var arr = [];
-
-	for(var i = 0; i < 3; i++) {
-		arr.push(function() { //* This function is not invoking a function, just creating one and placing it iside the arr variable.
-				console.log(i); //* this console.log is not being executed.  It does not get executed until after the functions inside arr are invoked.
-			})
+//* Factory:
+//* A function that returns or makes other things for us.
+function makeGreeting(language) {
+//* The language variable will be 'trapped' within this closure.
+	return function(firstname, lastname) {
+		//* When this function is executed here, it will look for the language variable up the scope and have access to it
+		//* even after makeGreeting's executin context is done.
+		if (language === 'en') {
+			console.log('Hello ' + firstname + ' ' + lastname);
+		}
+		if (language === 'es') {
+			console.log('Hola ' + firstname + ' ' + lastname);
+		}
 	}
-
-	return arr;
 }
 
-var fs = buildFunctions();
+//* These are two difrent execution context, because they were created during two diffrent execution contexts.
+var greetEnglish = makeGreeting('en');
+var greetSpanish = makeGreeting('es');
 
-//* The functions created inside the loop are invoked here:
-//* returns 3, because they were all created inside the same buildFunctions.
-fs[0](); 
-fs[1]();
-fs[2]();
+greetEnglish('Titan', 'Fernandez');
+greetSpanish('Titan', 'Fernandez');
 
-function buildFunctions2() {
-
-	var arr = [];
-
-	for(var i = 0; i < 3; i++) {
-		arr.push(//* in order to preserve the value of i for this function we need to create a separete execution context.
-				//* IIFE:
-				(function(j) {
-					return function() { //* This function won't have to look outside its execution context to find the value of j.
-						console.log(j);
-//* Everytime the loop runs it is going to execute this function, passing 0, then 1, then 2.
-//* Even tho each time thid function is executed its execution contex will leave, j's value will be hanging out.
-				}
-			}(i))
-		)
-	}
-
-	return arr;
-}
-
-var fs2 = buildFunctions2();
-
-fs2[0](); 
-fs2[1]();
-fs2[2]();
+//* Everytime we call a function it gets its own execution context and any functions created iside of it 
+//* will point to that execution context. JS knows which one to point to properly.
